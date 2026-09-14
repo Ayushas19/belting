@@ -838,21 +838,132 @@
     font-size: 0.85rem;
 }
 
-/* Responsive */
+/* ==========================================================================
+   RESPONSIVE STYLES — Tablet & Mobile
+   ========================================================================== */
+
+/* ---- Tablet (≤ 992px) ---- */
 @media (max-width: 992px) {
-    .hero-fullscreen-grid { grid-template-columns: 1fr; }
-    .why-us-grid { grid-template-columns: 1fr; }
-    .timeline-process-grid { grid-template-columns: repeat(2, 1fr); }
-    .calc-wrapper-card { grid-template-columns: 1fr; }
-    .contact-block-grid { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
+    /* Layout grids */
+    .hero-fullscreen-grid       { grid-template-columns: 1fr; }
+    .why-us-grid                { grid-template-columns: 1fr; }
+    .timeline-process-grid      { grid-template-columns: repeat(2, 1fr); }
+    .calc-wrapper-card          { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-block-grid         { grid-template-columns: 1fr; }
+    .footer-grid                { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+    /* Hero card */
+    .hero-transparent-card      { padding: 2rem 1.75rem; }
+    .hero-stats-transparent     { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 }
 
+/* ---- Mobile (≤ 768px) ---- */
 @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .mobile-toggle { display: block; }
-    .timeline-process-grid { grid-template-columns: 1fr; }
-    .calc-form-grid { grid-template-columns: 1fr; }
-    .calc-form-full { grid-column: span 1; }
-    .footer-grid { grid-template-columns: 1fr; }
+
+    /* --- Navigation --- */
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: var(--bg-cream);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        gap: 1.25rem;
+        border-bottom: 2px solid var(--grey-border);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+    .mobile-toggle  { display: block; }
+
+    /* Hide "Send Inquiry" button in navbar on mobile to save space */
+    .nav-actions .btn-sm { display: none; }
+
+    /* --- Top bar --- */
+    .top-bar-inner  { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .top-bar-info   { flex-direction: column; gap: 0.4rem; }
+
+    /* --- Sections --- */
+    .section { padding: 3.5rem 0; }
+
+    /* --- Page Banner --- */
+    .page-banner        { padding: 2.5rem 0; }
+    .page-banner h1     { font-size: 1.75rem; }
+    .page-banner p      { font-size: 0.97rem; }
+
+    /* --- Hero --- */
+    .hero-transparent-card {
+        padding: 1.5rem 1.1rem;
+        border-radius: var(--radius-md);
+    }
+    .hero-transparent-title { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+    .hero-transparent-lead  { font-size: 1rem; }
+
+    .hero-stats-transparent {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        text-align: left;
+    }
+    .hero-stats-transparent .stat-value { font-size: 1.4rem; }
+
+    .hero-step-bar      { gap: 0.5rem; }
+    .hero-step-bar .step-pill { font-size: 0.78rem; padding: 0.35rem 0.85rem; }
+
+    .hero-action-buttons { flex-direction: column; align-items: center; }
+    .hero-action-buttons .btn { width: 100%; max-width: 320px; }
+
+    .mat-pills { flex-wrap: wrap; justify-content: center; }
+
+    /* --- Why Us grid --- */
+    .why-us-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+    .why-card    { flex-direction: row; align-items: flex-start; padding: 1.5rem; }
+
+    /* --- 6-Step Process --- */
+    .timeline-process-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+
+    /* --- Calculator --- */
+    .calc-wrapper-card  { grid-template-columns: 1fr; padding: 1.5rem; gap: 1.75rem; }
+    .calc-form-grid     { grid-template-columns: 1fr; gap: 1rem; }
+    .calc-form-full     { grid-column: span 1; }
+    .calc-price-num     { font-size: 2.2rem; }
+
+    /* --- Products grid --- */
+    .products-grid { grid-template-columns: 1fr; }
+
+    /* --- Contact --- */
+    .contact-block-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+    .contact-info-panel { padding: 1.75rem; }
+    .contact-form-panel { padding: 1.75rem; }
+
+    /* --- Footer --- */
+    .footer-grid   { grid-template-columns: 1fr; gap: 1.5rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .footer        { padding: 3rem 0 1.5rem; }
+
+    /* --- Modal --- */
+    .modal-dialog { padding: 1.75rem 1.25rem; }
+}
+
+/* ---- Small Mobile (≤ 480px) ---- */
+@media (max-width: 480px) {
+    html { font-size: 15px; }
+
+    .container { padding: 0 1rem; }
+
+    .hero-transparent-card { padding: 1.25rem 0.9rem; }
+
+    .brand-logo-img { height: 40px; max-width: 200px; }
+
+    .btn-lg { padding: 0.85rem 1.5rem; font-size: 0.97rem; }
+
+    .why-card { flex-direction: column; }
+
+    .calc-summary-panel { padding: 1.5rem; }
+
+    .hero-step-bar .step-pill { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
+
+    .page-banner h1 { font-size: 1.5rem; }
 }
