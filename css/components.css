@@ -1,0 +1,858 @@
+/* ==========================================================================
+   Belting Engineering Works - Component Stylesheet
+   Navbar, Full Hero, Why Us, 6-Step Process, Calculator Form & Page Sections
+   Palette: Cream White (#FFFDF9), Dark Blue (#0A3663), Grey (#475569), White (#FFF)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Header Bar & Navbar
+   -------------------------------------------------------------------------- */
+.header-top {
+    background: var(--dark-blue-deep);
+    color: var(--text-inverted);
+    font-size: 0.85rem;
+    padding: 0.45rem 0;
+}
+
+.top-bar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.top-bar-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.top-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--bg-cream);
+}
+
+.top-bar-item i {
+    color: #90CDF4;
+}
+
+.top-bar-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--text-inverted);
+    padding: 0.2rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.78rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background: var(--bg-cream);
+    border-bottom: 1px solid var(--grey-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    z-index: 100;
+}
+
+.navbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.brand-logo-img {
+    height: 52px;
+    max-width: 290px;
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    transition: transform 0.25s ease;
+}
+
+.brand-logo:hover .brand-logo-img {
+    transform: scale(1.03);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+}
+
+.nav-link {
+    color: var(--dark-blue-deep);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.98rem;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--dark-blue);
+    border-radius: 2px;
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--dark-blue-deep);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Page Banner Header (For Sub-pages) */
+.page-banner {
+    background: var(--dark-blue-deep);
+    color: var(--text-inverted);
+    padding: 3.5rem 0;
+    text-align: center;
+    border-bottom: 2px solid var(--dark-blue);
+}
+
+.page-banner h1 {
+    color: var(--text-inverted);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-banner p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   2. Big Size Hero Conveyor Machine & Transparent Text Overlay
+   -------------------------------------------------------------------------- */
+.hero-fullscreen-machine {
+    position: relative;
+    min-height: calc(100vh - var(--header-height));
+    width: 100%;
+    background: var(--dark-blue-deep);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid var(--logo-grey-slate);
+}
+
+.hero-big-bg-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.95;
+}
+
+.hero-transparent-overlay-wrapper {
+    position: relative;
+    z-index: 2;
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-step-bar {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero-step-bar .step-pill {
+    padding: 0.45rem 1.2rem;
+    background: rgba(6, 35, 67, 0.65);
+    border: 1.5px solid var(--logo-grey-metallic);
+    color: var(--logo-grey-light);
+    border-radius: var(--radius-full);
+    font-size: 0.88rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.hero-step-bar .step-pill.active {
+    background: var(--dark-blue);
+    color: #FFFFFF;
+    border-color: #60A5FA;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+    transform: scale(1.05);
+}
+
+.hero-transparent-card {
+    background: rgba(6, 35, 67, 0.52);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1.5px solid rgba(255, 255, 255, 0.22);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 3rem;
+    max-width: 960px;
+    width: 100%;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.hero-badge-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1.1rem;
+    background: rgba(10, 54, 99, 0.8);
+    color: #90CDF4;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    backdrop-filter: blur(6px);
+}
+
+.hero-transparent-title {
+    font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+    color: rgba(255, 255, 255, 0.96);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+}
+
+.hero-transparent-title span {
+    background: linear-gradient(135deg, #FFFFFF, #90CDF4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-transparent-lead {
+    font-size: 1.18rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    margin-bottom: 2rem;
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-stats-transparent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    margin-top: 1.5rem;
+}
+
+.hero-stats-transparent .stat-value {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #90CDF4;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hero-stats-transparent .stat-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Material Pills */
+.mat-pill {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #FFFFFF;
+    padding: 0.35rem 0.9rem;
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.mat-pill.active, .mat-pill:hover {
+    background: var(--dark-blue);
+    border-color: #60A5FA;
+    color: #FFFFFF;
+}
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 40px rgba(6, 35, 67, 0.25);
+    padding: 1.5rem;
+    position: relative;
+}
+
+.canvas-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-inverted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 1rem;
+}
+
+.hero-belt-canvas {
+    width: 100%;
+    height: 340px;
+    display: block;
+    border-radius: var(--radius-md);
+    background: #0B1727;
+}
+
+.canvas-controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-inverted);
+}
+
+.scroll-notice {
+    font-size: 0.82rem;
+    color: #90CDF4;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.mat-pills {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.mat-pill {
+    padding: 0.35rem 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-inverted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mat-pill.active, .mat-pill:hover {
+    background: var(--color-white);
+    color: var(--dark-blue-deep);
+    border-color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   3. Why Us? Key Advantages Grid
+   -------------------------------------------------------------------------- */
+.why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.why-card {
+    background: var(--color-white);
+    border: 1px solid var(--grey-border);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    gap: 1.25rem;
+}
+
+.why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(10, 54, 99, 0.1);
+    border-color: var(--dark-blue);
+}
+
+.why-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-md);
+    background: var(--dark-blue-deep);
+    color: var(--text-inverted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    flex-shrink: 0;
+}
+
+.why-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-blue-deep);
+}
+
+.why-desc {
+    font-size: 0.95rem;
+    color: var(--grey-medium);
+    line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   4. 6-Step Workflow Process Timeline
+   -------------------------------------------------------------------------- */
+.timeline-process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+.process-step-card {
+    background: var(--color-white);
+    border: 1px solid var(--grey-border);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+    position: relative;
+    transition: transform 0.25s ease;
+}
+
+.process-step-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--dark-blue);
+}
+
+.step-number-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--dark-blue);
+    color: var(--text-inverted);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.step-card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-blue-deep);
+}
+
+.step-card-desc {
+    font-size: 0.88rem;
+    color: var(--grey-medium);
+}
+
+/* --------------------------------------------------------------------------
+   5. Interactive Calculator Form Grid (Ksspbelt extracted spec inputs)
+   -------------------------------------------------------------------------- */
+.calc-wrapper-card {
+    background: var(--color-white);
+    border: 2px solid var(--grey-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+}
+
+.calc-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.calc-form-full {
+    grid-column: span 2;
+}
+
+.radio-btn-group {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.radio-btn-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--grey-medium);
+    background: var(--bg-cream-alt);
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    border: 1px solid var(--grey-border);
+}
+
+.calc-summary-panel {
+    background: var(--dark-blue-deep);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    color: var(--text-inverted);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.calc-price-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.calc-price-num {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #90CDF4;
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.calc-specs-list {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.calc-spec-item {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* --------------------------------------------------------------------------
+   6. Products Catalog Grid & Filter
+   -------------------------------------------------------------------------- */
+.catalog-filter-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.cat-filter-btn {
+    padding: 0.65rem 1.4rem;
+    background: var(--color-white);
+    border: 1px solid var(--grey-border);
+    border-radius: var(--radius-md);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--dark-blue-deep);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.cat-filter-btn:hover, .cat-filter-btn.active {
+    background: var(--dark-blue-deep);
+    color: var(--text-inverted);
+    border-color: var(--dark-blue-deep);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: var(--color-white);
+    border: 1px solid var(--grey-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(10, 54, 99, 0.12);
+    border-color: var(--dark-blue);
+}
+
+.product-img-box {
+    height: 220px;
+    width: 100%;
+    position: relative;
+    background: var(--grey-bg);
+    overflow: hidden;
+}
+
+.product-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img-box img {
+    transform: scale(1.05);
+}
+
+.product-tag-badge {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    background: var(--dark-blue-deep);
+    color: var(--text-inverted);
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.product-content-body {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-card-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+    color: var(--dark-blue-deep);
+}
+
+.product-card-desc {
+    font-size: 0.95rem;
+    color: var(--grey-medium);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.specs-grid-mini {
+    background: var(--bg-cream-alt);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.spec-line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.spec-line span { color: var(--grey-light); }
+.spec-line strong { color: var(--dark-blue-deep); }
+
+/* --------------------------------------------------------------------------
+   7. Contact & Location
+   -------------------------------------------------------------------------- */
+.contact-block-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-info-panel {
+    background: var(--dark-blue);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    color: var(--text-inverted);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info-panel h3 {
+    color: var(--text-inverted);
+}
+
+.contact-detail-row {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.75rem;
+}
+
+.contact-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.12);
+    color: #90CDF4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.contact-form-panel {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    margin-bottom: 1.35rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.45rem;
+    color: var(--dark-blue-deep);
+}
+
+.form-input, .form-select {
+    width: 100%;
+    padding: 0.85rem 1.1rem;
+    border: 1px solid var(--grey-border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    background: var(--color-white);
+    color: var(--dark-blue-deep);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-input:focus, .form-select:focus {
+    border-color: var(--dark-blue);
+    box-shadow: 0 0 0 3px rgba(10, 54, 99, 0.12);
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 35, 67, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-dialog {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 520px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--grey-light);
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background: var(--dark-blue-deep);
+    color: var(--text-inverted);
+    padding: 4rem 0 2rem 0;
+    font-size: 0.92rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer p { color: rgba(255, 255, 255, 0.75); }
+.footer a { color: rgba(255, 255, 255, 0.85); }
+.footer a:hover { color: #90CDF4; }
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-fullscreen-grid { grid-template-columns: 1fr; }
+    .why-us-grid { grid-template-columns: 1fr; }
+    .timeline-process-grid { grid-template-columns: repeat(2, 1fr); }
+    .calc-wrapper-card { grid-template-columns: 1fr; }
+    .contact-block-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .mobile-toggle { display: block; }
+    .timeline-process-grid { grid-template-columns: 1fr; }
+    .calc-form-grid { grid-template-columns: 1fr; }
+    .calc-form-full { grid-column: span 1; }
+    .footer-grid { grid-template-columns: 1fr; }
+}
