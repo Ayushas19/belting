@@ -190,3 +190,18 @@
     background-image: radial-gradient(circle at 50% 50%, rgba(0, 242, 254, 0.08) 0%, transparent 60%);
     pointer-events: none;
 }
+
+/* ==========================================================================
+   Mobile Fix: Force-show all reveal elements on small screens
+   (prevents invisible text if IntersectionObserver doesn't trigger)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
