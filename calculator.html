@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conveyor Cost Calculator | Belting Engineering Works Kanpur</title>
+    <meta name="description" content="Calculate conveyor system costs, motor power kW, and technical specifications with Belting Engineering Works Kanpur instant calculator tool.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <div class="scroll-progress-bar" id="blueScrollProgress"></div>
+
+    <!-- Header Top Bar & Navbar -->
+    <div class="header-top">
+        <div class="container top-bar-inner">
+            <div class="top-bar-info">
+                <div class="top-bar-item"><i class="fas fa-map-marker-alt"></i><span>A 59/29, Dada Nagar Industrial Area, Kanpur, UP - 208022</span></div>
+                <div class="top-bar-item"><i class="fas fa-phone-alt"></i><span>+91 98390 33424 / +91 80480 53424</span></div>
+            </div>
+            <div class="top-bar-info">
+                <div class="top-bar-badge"><i class="fas fa-certificate"></i><span>VERIFIED MANUFACTURER</span></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <a href="index.html" class="brand-logo"><img src="assets/WhatsApp Image 2026-09-14 at 22.29.13.jpeg" alt="Belting Engineering Works" class="brand-logo-img"></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="calculator.html" class="nav-link active">Cost Calculator</a>
+                <a href="applications.html" class="nav-link">Industry Solutions</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-blue btn-sm"><i class="fas fa-paper-plane"></i> Send Inquiry</a>
+                <button class="mobile-toggle" id="mobileNavToggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner">
+        <div class="container">
+            <h1>Calculate Cost of Conveyor System</h1>
+            <p>Input Technical Specifications & Receive Instant Estimate & Motor Rating</p>
+        </div>
+    </div>
+
+    <!-- Calculator Section -->
+    <section class="section section-grey">
+        <div class="container">
+            
+            <!-- GSTIN Input -->
+<div class="form-group">
+    <label class="form-label" for="calcGstin">GSTIN Number</label>
+    <input type="text" id="calcGstin" class="form-input" placeholder="Enter GSTIN">
+</div>
+<form id="conveyorCalcForm" class="calc-wrapper-card">
+                
+                <!-- Inputs -->
+                <div class="calc-form-grid">
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="calcType">Conveyor Type</label>
+                        <select id="calcType" class="form-select">
+                            <option value="belt" selected>Belt Conveyor (PVC / PU)</option>
+                            <option value="modular">Modular Plastic Conveyor</option>
+                            <option value="mesh">Stainless Steel Mesh Conveyor</option>
+                            <option value="spiral">Spiral Conveyor System</option>
+                            <option value="round">Round Belt Conveyor</option>
+                            <option value="roller">Roller Conveyor</option>
+                            <option value="chain">Chain / Slat Conveyor</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="calcConfig">Configuration</label>
+                        <select id="calcConfig" class="form-select">
+                            <option value="straight" selected>Straight</option>
+                            <option value="curved">Curved (45° / 90° / 180°)</option>
+                            <option value="zshaped">Z-shaped</option>
+                            <option value="lshaped">L-shaped</option>
+                            <option value="inclined">Inclined</option>
+                            <option value="spiral">Spiral</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="calcFrame">Frame Material</label>
+                        <select id="calcFrame" class="form-select">
+                            <option value="ss" selected>Stainless Steel (AISI 304 / 316)</option>
+                            <option value="cs">Powder Coated Structural Steel</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="calcCargo">Cargo Type</label>
+                        <select id="calcCargo" class="form-select">
+                            <option value="piece" selected>Piece Cargo / Packaged</option>
+                            <option value="bulk">Bulk Raw Material</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group calc-form-full">
+                        <label class="form-label" for="calcIndustry">Industry of Application</label>
+                        <select id="calcIndustry" class="form-select">
+                            <option value="bakery" selected>Bakery & Confectionery Industry</option>
+                            <option value="semifinished">Semi-Finished Products Industry</option>
+                            <option value="fish">Fish Processing Industry</option>
+                            <option value="poultry">Poultry Processing Industry</option>
+                            <option value="meat">Meat Processing Industry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Conveyor Length (mm)</label>
+                        <input type="number" id="calcLength" class="form-input" value="5000" min="500" step="500">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Belt Width (mm)</label>
+                        <input type="number" id="calcWidth" class="form-input" value="600" min="200" step="50">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Loading Height (mm)</label>
+                        <input type="number" id="calcLoadHeight" class="form-input" value="800" step="50">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Discharge Height (mm)</label>
+                        <input type="number" id="calcDischargeHeight" class="form-input" value="800" step="50">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Travel Speed (m/min)</label>
+                        <input type="number" id="calcSpeed" class="form-input" value="15" step="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Temperature Mode Min (°C)</label>
+                        <input type="number" id="calcTempMin" class="form-input" value="-10" step="5">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Temperature Mode Max (°C)</label>
+                        <input type="number" id="calcTempMax" class="form-input" value="80" step="5">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="calcDirection">Direction of Travel</label>
+                        <select id="calcDirection" class="form-select">
+                            <option value="oneway" selected>One Way</option>
+                            <option value="reversible">Reversible</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="calcVfd">Frequency Converter (VFD)</label>
+                        <select id="calcVfd" class="form-select">
+                            <option value="yes" selected>Yes - Speed Control</option>
+                            <option value="no">No - Fixed Speed</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group calc-form-full">
+                        <label class="form-label" for="calcFile">Attach details, diagram or sketch if necessary</label>
+                        <input type="file" id="calcFile" class="form-input" accept=".pdf,.png,.jpg,.jpeg,.dwg,.dxf" style="padding: 0.5rem; background: var(--color-white);">
+                    </div>
+
+                    <div class="form-group calc-form-full" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox" id="calcPrivacy" required checked style="width: 1.1rem; height: 1.1rem; accent-color: var(--dark-blue);">
+                        <label for="calcPrivacy" style="font-size: 0.88rem; color: var(--grey-dark); cursor: pointer;">
+                            I agree to the processing of <a href="#" style="color: var(--dark-blue); text-decoration: underline;">personal data</a>
+                        </label>
+                    </div>
+
+                </div>
+
+                <!-- Summary & Output -->
+                <div class="calc-summary-panel">
+                    <div>
+                        <div class="calc-price-title">Estimated Cost</div>
+                        <div class="calc-price-num" id="calcPriceDisplay">₹1,85,000</div>
+
+                        <div class="calc-specs-list">
+                            <div class="calc-spec-item">
+                                <span>Estimated Motor Rating:</span>
+                                <strong id="calcMotorKwDisplay" style="color: #90CDF4;">1.85 kW</strong>
+                            </div>
+                            <div class="calc-spec-item">
+                                <span>Dimensions:</span>
+                                <strong id="calcLengthDisplay">5.0 m (600mm width)</strong>
+                            </div>
+                            <div class="calc-spec-item">
+                                <span>Estimated Manufacturing:</span>
+                                <strong id="calcLeadDisplay" style="color: #90CDF4;">5-7 Days</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-blue btn-lg" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Request Now
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="brand-logo" style="margin-bottom: 1rem; display: inline-flex;"><img src="assets/WhatsApp Image 2026-09-14 at 22.29.13.jpeg" alt="Belting Engineering Works" class="brand-logo-img"></a>
+                    <p>Manufacturer, supplier, and retailer of PVC conveyor belts, PU conveyor belts, modular plastic belts, and wire mesh belts in Kanpur, UP.</p>
+                </div>
+                <div>
+                    <h4 style="color: #FFF; margin-bottom: 1rem;">Products</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.4rem;">
+                        <li><a href="products.html">PVC Conveyor Belts</a></li>
+                        <li><a href="products.html">PU Conveyor Belts</a></li>
+                        <li><a href="products.html">Modular Plastic Belts</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #FFF; margin-bottom: 1rem;">Navigation</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.4rem;">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="calculator.html">Cost Calculator</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #FFF; margin-bottom: 1rem;">Kanpur Unit</h4>
+                    <p style="margin-bottom: 0.4rem;"><i class="fas fa-map-marker-alt" style="color: #90CDF4;"></i> A 59/29, Dada Nagar Industrial Area, Kanpur, UP - 208022</p>
+                    <p><i class="fas fa-phone-alt" style="color: #90CDF4;"></i> +91 98390 33424</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© 2026 Belting Engineering Works. All rights reserved.</div>
+                <div>Dada Nagar Industrial Area, Kanpur, UP</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/calculator.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
